@@ -45,6 +45,6 @@ const miguelito = new Student2(
     "miguel",
     28,
     ["curso de analisis de negocio para ciencia de datos",
-    "curso de principios de visualización de datos"],
+    "curso de principios de visualización de datos",],
 );
 
