@@ -1,3 +1,23 @@
+class comment{
+    constructor({
+        content,
+        studentName,
+        studentRole="estudiante",
+    }){
+        this.content = content;
+        this.studentName = studentName;
+        this.studentRole=studentRole;
+        this.like=0;
+    }
+    publicar(){
+        console.log(this.studentName + "(" + this.studentRole + ")");
+        console.log(this.like + "likes");
+        console.log(this.content);
+    }
+}
+
+
+
 class Course{
     constructor({
         name,
@@ -40,6 +60,13 @@ class Student3{
         this.approvedCourses =approvedCourses;
         this.learningPaths=learningPaths;
     }
+    publicarComentario(commentContent){
+        const comment= new Comment({
+            content: commentContent,
+            studentName: this.name,
+        });
+        comment.publicar();
+    }
 }
 class freeStudent extends Student3{
     constructor(props){
@@ -68,6 +95,15 @@ class basicStudent extends Student3{
 }
 
 class expertStudent extends Student3{
+    constructor(props){
+        super(props);
+    }
+    approveCourse(newCourse){
+        this.approvedCourses.push(newCourse);
+    }
+    
+}
+class teacherStudent extends Student3{
     constructor(props){
         super(props);
     }
